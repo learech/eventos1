@@ -1,22 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- BOOSTRAP -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-    <div id="container">
-        <section id="sec-insumos"></section>
-        <section id="sec-carrito"></section>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Porteros futsal</title>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="./img/benji.jpg" alt="" width="50" height="44" class="d-inline-block align-text-top">
+                Porteros Futsal
+              </a>
+            </div>
+          </nav>
+    </header>
+
+    <main>
+
+    <div id="login" class="n-0 vh-100 row justify-content-center align-items-center">
+        <div class="col-auto p-5 text-center row">
+            <div>
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login</button>
+                <button class="btn btn-dark" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop2">Registro</button>
+            </div>
+            
+            <div id="noacceso" class="n-0 vh-100 row justify-content-center align-items-center accesoNo">
+                <div class="col-auto p-5 text-center row">
+                    <h1>Algún dato ingresado no es correcto. Inténtelo nuevamente</h1>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- JAVASCRIPT -->
-    <script src="/JavaScript/insumos.js"></script>
-    <script src="/JavaScript/carrito.js"></script>
-</body>
+    <div id="acceso" class="accesoSi">
+        <section class="container mt-5">
+            <h1 class="text-center">Porteros Futsal</h1>
+            <div class="items">
+                <div class="row">
+    
+                </div>
+            </div>
+        </section>
+    
+        <section class="container">
+            <div class="row text-center" id="tienda">
+    
+            </div>
+        </section>
+    
+        <section class="container mt-5">
+            <h1 class="text-center">E-shop</h1>
+            <div class="row text-center" id="carrito">
+    
+            </div>
+            <div id="total">
+    
+            </div>
+        </section>
+    </div>
+
+    <div class="modal" id="staticBackdrop" data-bs-backdrop="false" data-bs-keyboard="false" aria-labelledby="false"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body bg-primary">
+                    <button type="button" class="btn-close float-end text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    <form id="formulario"
+                        class="col-auto p-5 text-center m-5 row justify-content-center rounded border border-dark header">
+
+                        <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control bg-dark text-success mb-2" id="email"
+                            aria-describedby="emailHelp">
+                        <div id="errorEmail" class="mb-5">
+
+                        </div>
+
+                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control bg-dark text-success" id="password">
+                        <div id="errorPassword" class="mb-5">
+
+                        </div>
+
+                        <div>
+                            <button type="submit" class="mt-5 text-center btn btn-dark" data-bs-dismiss="modal">Inicie
+                                sesión</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="staticBackdrop2" data-bs-backdrop="false" data-bs-keyboard="false" aria-labelledby="false"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-body bg-primary">
+                    <button type="button" class="btn-close float-end text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+
+                    <form id="formularioRegistro"
+                        class="col-auto p-5 text-center m-5 row justify-content-center rounded border border-dark header">
+
+                        <label for="exampleInputNombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control bg-dark text-success mb-2" id="nombre"
+                            aria-describedby="emailHelp">
+
+                        <label for="exampleInputApellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control bg-dark text-success mb-2" id="apellido"
+                            aria-describedby="emailHelp">
+
+                        <label for="exampleInputEmail" class="form-label">Correo</label>
+                        <input type="email" class="form-control bg-dark text-success mb-2" id="emailRegistro"
+                            aria-describedby="emailHelp">
+
+
+                        <label for="exampleInputPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control bg-dark text-success" id="passwordRegistro">
+
+                        <div>
+                            <button type="submit" class="mt-5 text-center btn btn-dark" data-bs-dismiss="modal">Inicie
+                                Sesion</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <h6> PORTEROS FUTSAL - TODOS LOS DERECHOS RESERVADOS </h6> 
+</footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
